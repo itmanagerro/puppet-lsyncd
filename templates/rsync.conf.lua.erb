@@ -3,8 +3,8 @@ sync {
   source = "<%= @source %>",
   target = "<%= @target %>",
   rsync = {
-    <% @options.each do |key, val| -%>
-      <%= key %> = <%= val %>,
+    <% @options.sort.each do |pair| -%>
+      <%= pair[0] %> = <%= pair[1] %>,
     <% end %>
   },
 }
